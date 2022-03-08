@@ -1,0 +1,16 @@
+Answers go here!
+...student1.cpp:249: This was a segmentation fault because we were accessing invaders[invaderRow][invaderRow] for a non-square matrix. 
+To fix this, we simply changed it to invaders[invaderRow][invaderCol] to make sure we hit all the right indices. 
+
+...student1.cpp:27: This was a logic error, as there was an extra semicolon after an if statement, and the following braces acted as an extra scope, thus it would always be run. 
+To fix this, we got rid of the semicolon, and the program had the expected output. 
+
+...student1.cpp:62: This was another logic error, where a for loop became infinite, because it had no incrementor. 
+This was solved by adding a simple ...; ++colIdx) {...} in the for loop. 
+
+...student2.cpp:218: The problem here is that we were trying to deallocate all of the invaders, and we passed in the matrix size nxm. 
+In reality, invaders is mxn, so we modify the code accordingly: DeallocateWarriors(invaders, m, n);
+
+...student2.cpp:113 & 117: These two lines had faulty checks. 
+Essentially, the logic was backwards; if the invader had larger power, the protector would win, and vice versa. 
+So, to fix this, we simply reversed the operators on the if statements, and our code ran!
